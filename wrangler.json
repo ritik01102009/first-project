@@ -1,11 +1,8 @@
+
 {
-  "$schema": "./node_modules/wrangler/config-schema.json",
-  "name": "my-spa",
-  "main": "src/index.js",
-  "upload_source_maps": true,
+  "name": "first-project",
   "compatibility_date": "2026-10-21",
   "assets": {
-    "directory": "./dist",
-    "binding": "ASSETS"
+    "directory": "./dist"
   }
 }
