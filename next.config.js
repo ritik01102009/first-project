@@ -2,6 +2,7 @@
 const nextConfig = {
   // Static export — required for Cloudflare Pages (no Node.js server)
   output: "export",
+  trailingSlash: true,
 
   reactStrictMode: true,
   typescript: {
