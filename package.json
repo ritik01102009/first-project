@@ -6,7 +6,7 @@
     "dev": "next dev",
     "build": "next build",
     "build:cf": "next build",
-    "deploy": "wrangler deploy",
+    "deploy": "next build && wrangler deploy",
     "start": "next start",
     "lint": "next lint"
   },
@@ -37,3 +37,4 @@
     "wrangler": "^3.114.0"
   }
 }
+
