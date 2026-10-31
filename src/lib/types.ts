@@ -25,11 +25,24 @@ export interface SavingsGoal {
   color: string;
 }
 
-export interface Subscription {
+export interface BillPerson {
   id: string;
   name: string;
-  amount: number;
-  frequency: "monthly" | "yearly";
-  category: string;
-  active: boolean;
+  color: string;
+}
+
+export interface BillItem {
+  id: string;
+  name: string;
+  price: number;
+  assignedTo: string[];
+}
+
+export interface BillSplitSettlement {
+  person: BillPerson;
+  items: { item: BillItem; sharePrice: number }[];
+  subtotal: number;
+  tax: number;
+  tip: number;
+  totalOwed: number;
 }

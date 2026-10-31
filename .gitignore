@@ -43,3 +43,15 @@ Spensensie/
 .vscode-shared.code-workspace
 .npmrc
 
+
+# external cloned repos & agent scratch
+/OpenDots/
+/ServerLocator/
+/SmartBillAnalyzer/
+/awesome-agent-skills/
+/awesome-design-md/
+/deepseek-harness/
+/free-for-dev/
+/strix/
+/.claude/
+/agent/

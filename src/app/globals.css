@@ -8,6 +8,8 @@
     --foreground: #0f172a;
     --card: #ffffff;
     --card-border: #e2e8f0;
+    --primary: #533afd;
+    --primary-soft: #665efd;
   }
 
   .dark {
@@ -15,6 +17,8 @@
     --foreground: #f8fafc;
     --card: #0f172a;
     --card-border: #1e293b;
+    --primary: #665efd;
+    --primary-soft: #533afd;
   }
 }
 
@@ -38,6 +42,16 @@ body {
 /* Tabular figures for clean financial number alignment */
 .tabular-nums {
   font-variant-numeric: tabular-nums;
+  font-feature-settings: "tnum" 1;
+}
+
+/* Hide scrollbar for smooth mobile touch ribbons */
+.no-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+.no-scrollbar {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
 }
 
 /* Professional FinTech Glass & Card utility styles */
@@ -45,12 +59,19 @@ body {
   background-color: var(--card);
   border: 1px solid var(--card-border);
   border-radius: 1rem;
-  box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.05);
+  box-shadow: 0 1px 3px 0 rgba(0, 55, 112, 0.05);
   transition: all 0.2s cubic-bezier(0.16, 1, 0.3, 1);
 }
 
 .pro-card:hover {
   box-shadow: 0 8px 24px -4px rgba(16, 185, 129, 0.08);
+}
+
+/* Stripe-inspired atmospheric top gradient mesh */
+.stripe-mesh-gradient {
+  background: radial-gradient(at 0% 0%, rgba(99, 102, 241, 0.12) 0px, transparent 50%),
+              radial-gradient(at 100% 0%, rgba(16, 185, 129, 0.12) 0px, transparent 50%),
+              radial-gradient(at 50% 100%, rgba(244, 63, 94, 0.05) 0px, transparent 50%);
 }
 
 /* Sleek scrollbar */

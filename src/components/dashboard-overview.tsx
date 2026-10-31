@@ -1,7 +1,7 @@
 "use client";
 
 import React from "react";
-import { TrendingDown, PiggyBank, CreditCard, Target, ArrowRight, DollarSign, BarChart3, BookOpen, ShieldCheck } from "lucide-react";
+import { TrendingDown, PiggyBank, CreditCard, Split, ArrowRight, DollarSign, BarChart3, BookOpen } from "lucide-react";
 import { useLanguage } from "@/components/providers/language-provider";
 
 interface DashboardOverviewProps {
@@ -49,13 +49,13 @@ export function DashboardOverview({ onNavigate }: DashboardOverviewProps) {
       border: "border-sky-200 dark:border-sky-800",
     },
     {
-      id: "subscriptions",
-      icon: Target,
-      title: t("tools.subscriptions.title"),
-      description: t("tools.subscriptions.desc"),
-      color: "from-amber-500 to-yellow-400",
-      bg: "bg-amber-50 dark:bg-amber-950/30",
-      border: "border-amber-200 dark:border-amber-800",
+      id: "bill-splitter",
+      icon: Split,
+      title: t("tools.bill_splitter.title"),
+      description: t("tools.bill_splitter.desc"),
+      color: "from-indigo-500 via-purple-500 to-pink-400",
+      bg: "bg-indigo-50 dark:bg-indigo-950/30",
+      border: "border-indigo-200 dark:border-indigo-800",
     },
     {
       id: "education",
@@ -91,10 +91,6 @@ export function DashboardOverview({ onNavigate }: DashboardOverviewProps) {
               <TrendingDown className="w-3.5 h-3.5 text-emerald-400" />
               {t("hero.badge")}
             </div>
-            <div className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-full bg-slate-800/80 border border-slate-700/80 text-slate-300 text-xs font-medium backdrop-blur-xs">
-              <ShieldCheck className="w-3.5 h-3.5 text-emerald-400" />
-              <span>{language === "ja" ? "100% 端末内処理・サーバー通信ゼロ" : "100% Backend-Free • Private & Local"}</span>
-            </div>
           </div>
           <h1 className="text-3xl md:text-5xl font-black leading-tight mb-4 tracking-tight">
             {t("hero.title_lead")}{" "}
@@ -114,10 +110,11 @@ export function DashboardOverview({ onNavigate }: DashboardOverviewProps) {
               <ArrowRight className="w-4 h-4" />
             </button>
             <button
-              onClick={() => onNavigate("recommender")}
-              className="w-full sm:w-auto px-6 py-3.5 rounded-xl bg-white/10 hover:bg-white/15 active:scale-95 text-white font-semibold text-sm border border-white/20 transition-all cursor-pointer backdrop-blur-xs text-center"
+              onClick={() => onNavigate("bill-splitter")}
+              className="w-full sm:w-auto px-6 py-3.5 rounded-xl bg-white/10 hover:bg-white/15 active:scale-95 text-white font-semibold text-sm border border-white/20 transition-all cursor-pointer backdrop-blur-xs text-center flex items-center justify-center gap-2"
             >
-              {t("hero.find_method")}
+              <Split className="w-4 h-4 text-indigo-400" />
+              <span>{language === "ja" ? "レシートスキャン＆割り勘" : "Scan & Split Bill"}</span>
             </button>
           </div>
         </div>

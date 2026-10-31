@@ -48,6 +48,14 @@ export const metadata: Metadata = {
     "貯金シミュレーション"
   ],
   authors: [{ name: "家計管理 Team" }],
+  icons: {
+    icon: "/logo.jpg",
+    shortcut: "/logo.jpg",
+    apple: "/logo.jpg",
+  },
+  verification: {
+    google: ["NJ9lfG5gSJGsY5qRXOAqsAjPYt10NihnwnHlnFJaYN0", "google9559afa4dce591dc"],
+  },
 };
 
 export default function RootLayout({
@@ -58,6 +66,12 @@ export default function RootLayout({
   return (
     <html suppressHydrationWarning>
       <head>
+        <link rel="icon" href="/logo.jpg" type="image/jpeg" />
+        <link rel="apple-touch-icon" href="/logo.jpg" />
+        <meta name="google-site-verification" content="NJ9lfG5gSJGsY5qRXOAqsAjPYt10NihnwnHlnFJaYN0" />
+        <meta name="google-site-verification" content="google9559afa4dce591dc" />
+        <meta httpEquiv="X-Content-Type-Options" content="nosniff" />
+        <meta name="referrer" content="strict-origin-when-cross-origin" />
         <link rel="preconnect" href="https://fonts.googleapis.com" />
         <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
         <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet" />
