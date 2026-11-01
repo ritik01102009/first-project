@@ -15,7 +15,8 @@ export const viewport: Viewport = {
 
 export const metadata: Metadata = {
   title: "KakeiKanri (家計管理) - Free Debt Payoff Calculator & Budget Tracker App",
-  description: "KakeiKanri (家計管理) is the best budget app and credit card debt payoff calculator. Compare Debt Snowball vs Avalanche, track budget, and export professional PDF reports.",
+  description:
+    "KakeiKanri (家計管理) is the best budget app and credit card debt payoff calculator. Compare Debt Snowball vs Avalanche, track budget, and export professional PDF reports.",
   keywords: [
     "debt payoff calculator",
     "credit card debt payoff calculator",

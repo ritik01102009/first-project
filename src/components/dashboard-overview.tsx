@@ -1,7 +1,7 @@
 "use client";
 
 import React from "react";
-import { TrendingDown, PiggyBank, CreditCard, Target, ArrowRight, DollarSign, BarChart3, BookOpen, ShieldCheck } from "lucide-react";
+import { TrendingDown, PiggyBank, CreditCard, Target, ArrowRight, DollarSign, BarChart3, BookOpen, ShieldCheck, Receipt } from "lucide-react";
 import { useLanguage } from "@/components/providers/language-provider";
 
 interface DashboardOverviewProps {
@@ -17,54 +17,63 @@ export function DashboardOverview({ onNavigate }: DashboardOverviewProps) {
       icon: CreditCard,
       title: t("tools.debt.title"),
       description: t("tools.debt.desc"),
-      color: "from-rose-500 to-orange-400",
-      bg: "bg-rose-50 dark:bg-rose-950/30",
-      border: "border-rose-200 dark:border-rose-800",
+      color: "from-emerald-500 to-teal-400",
+      bg: "bg-emerald-50 dark:bg-emerald-950/30",
+      border: "border-emerald-200 dark:border-emerald-800",
     },
     {
       id: "recommender",
       icon: BarChart3,
       title: t("tools.recommender.title"),
       description: t("tools.recommender.desc"),
-      color: "from-violet-500 to-purple-400",
-      bg: "bg-violet-50 dark:bg-violet-950/30",
-      border: "border-violet-200 dark:border-violet-800",
+      color: "from-teal-500 to-green-400",
+      bg: "bg-teal-50 dark:bg-teal-950/30",
+      border: "border-teal-200 dark:border-teal-800",
     },
     {
       id: "budget",
       icon: DollarSign,
       title: t("tools.budget.title"),
       description: t("tools.budget.desc"),
-      color: "from-emerald-500 to-teal-400",
-      bg: "bg-emerald-50 dark:bg-emerald-950/30",
-      border: "border-emerald-200 dark:border-emerald-800",
+      color: "from-green-500 to-emerald-400",
+      bg: "bg-green-50 dark:bg-green-950/30",
+      border: "border-green-200 dark:border-green-800",
     },
     {
       id: "savings",
       icon: PiggyBank,
       title: t("tools.savings.title"),
       description: t("tools.savings.desc"),
-      color: "from-sky-500 to-blue-400",
-      bg: "bg-sky-50 dark:bg-sky-950/30",
-      border: "border-sky-200 dark:border-sky-800",
+      color: "from-lime-500 to-emerald-400",
+      bg: "bg-lime-50 dark:bg-lime-950/30",
+      border: "border-lime-200 dark:border-lime-800",
     },
     {
       id: "subscriptions",
       icon: Target,
       title: t("tools.subscriptions.title"),
       description: t("tools.subscriptions.desc"),
-      color: "from-amber-500 to-yellow-400",
-      bg: "bg-amber-50 dark:bg-amber-950/30",
-      border: "border-amber-200 dark:border-amber-800",
+      color: "from-emerald-600 to-teal-500",
+      bg: "bg-emerald-50 dark:bg-emerald-950/30",
+      border: "border-emerald-200 dark:border-emerald-800",
+    },
+    {
+      id: "bill_splitter",
+      icon: Receipt,
+      title: t("tools.bill_splitter.title"),
+      description: t("tools.bill_splitter.desc"),
+      color: "from-green-600 to-emerald-500",
+      bg: "bg-green-50 dark:bg-green-950/30",
+      border: "border-green-200 dark:border-green-800",
     },
     {
       id: "education",
       icon: BookOpen,
       title: t("tools.education.title"),
       description: t("tools.education.desc"),
-      color: "from-pink-500 to-rose-400",
-      bg: "bg-pink-50 dark:bg-pink-950/30",
-      border: "border-pink-200 dark:border-pink-800",
+      color: "from-teal-600 to-emerald-500",
+      bg: "bg-teal-50 dark:bg-teal-950/30",
+      border: "border-teal-200 dark:border-teal-800",
     },
   ];
 

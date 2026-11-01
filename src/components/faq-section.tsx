@@ -21,6 +21,18 @@ export function FaqSection() {
     { q: t("faq.q10"), a: t("faq.a10") },
   ];
 
+  // Generate FAQPage schema
+  const faqSchema = {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    mainEntity: faqs.map((faq, index) => ({
+      "@type": "Question",
+      name: faq.q,
+      text: faq.a,
+      position: index + 1,
+    })),
+  };
+
   return (
     <section className="w-full max-w-4xl mx-auto py-12 px-4 mt-8">
       <div className="flex items-center justify-center gap-2 mb-8">
@@ -57,3 +69,10 @@ export function FaqSection() {
     </section>
   );
 }
+
+// Export the schema for use by the page
+export const faqPageSchema = {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  mainEntity: [],
+};

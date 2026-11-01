@@ -1,6 +1,7 @@
 "use client";
 
 import React, { useState } from "react";
+import { usePageMetadata } from "@/hooks/use-metadata";
 import { Navbar } from "@/components/navbar";
 import { SlideWrapper } from "@/components/slide-wrapper";
 import { DashboardOverview } from "@/components/dashboard-overview";
@@ -9,15 +10,68 @@ import { SmartDebtRecommender } from "@/components/smart-debt-recommender";
 import { BudgetTracker } from "@/components/budget-tracker";
 import { SavingsTracker } from "@/components/savings-tracker";
 import { EducationSection } from "@/components/education-section";
+import { BillSplitter } from "@/components/bill-splitter";
 import { SubscriptionCalculator } from "@/components/subscription-calculator";
 import { FaqSection } from "@/components/faq-section";
 import { useLanguage } from "@/components/providers/language-provider";
 import { Heart, Shield, FileText, Globe, BarChart3 } from "lucide-react";
 
-const TABS_ORDER = ["dashboard", "debt", "recommender", "budget", "savings", "subscriptions", "education"];
+const TABS_ORDER = ["dashboard", "debt", "recommender", "budget", "savings", "subscriptions", "bill_splitter", "education"];
 
 export default function Home() {
   const { t, language, setLanguage } = useLanguage();
+  usePageMetadata({
+    title: t("hero.title_lead"),
+    description: t("hero.description"),
+    extraKeywords: ["budget app", "debt calculator", "financial freedom"],
+    openGraph: {
+      title: t("hero.title_lead"),
+      description: t("hero.description"),
+      type: "website",
+      images: [
+        {
+          url: "https://kakeikanri.com/og-image.png",
+          width: 1200,
+          height: 630,
+          alt: t("hero.title_highlight"),
+        },
+      ],
+    },
+    twitter: {
+      card: "summary_large_image",
+      title: t("hero.title_lead"),
+      description: t("hero.description"),
+      image: "https://kakeikanri.com/twitter-image.png",
+    },
+    schema: [
+      {
+        type: "WebPage",
+        data: {
+          "@context": "https://schema.org",
+          "@type": "WebPage",
+          name: t("hero.title_highlight"),
+          description: t("hero.description"),
+          url: "https://kakeikanri.com",
+          inLanguage: language,
+          isPartOf: {
+            "@type": "Website",
+            name: t("footer.brand_description"),
+          },
+        },
+      },
+      {
+        type: "Organization",
+        data: {
+          "@context": "https://schema.org",
+          "@type": "Organization",
+          name: language === "ja" ? "家計管理" : "KakeiKanri",
+          description: t("footer.brand_description"),
+          url: "https://kakeikanri.com",
+          logo: "https://kakeikanri.com/logo.png",
+        },
+      },
+    ],
+  });
   const [activeTab, setActiveTab] = useState<string>("dashboard");
   const [prevTab, setPrevTab] = useState<string>("dashboard");
 
@@ -45,6 +99,7 @@ export default function Home() {
           {activeTab === "budget" && <BudgetTracker />}
           {activeTab === "savings" && <SavingsTracker />}
           {activeTab === "subscriptions" && <SubscriptionCalculator />}
+          {activeTab === "bill_splitter" && <BillSplitter />}
           {activeTab === "education" && <EducationSection />}
         </SlideWrapper>
       </main>
