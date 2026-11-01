@@ -34,3 +34,24 @@ yarn-error.log*
 # typescript
 *.tsbuildinfo
 next-env.d.ts
+
+# cloudflare
+.wrangler/
+
+# local
+Spensensie/
+.vscode-shared.code-workspace
+.npmrc
+
+
+# external cloned repos & agent scratch
+/OpenDots/
+/ServerLocator/
+/SmartBillAnalyzer/
+/awesome-agent-skills/
+/awesome-design-md/
+/deepseek-harness/
+/free-for-dev/
+/strix/
+/.claude/
+/agent/
