@@ -20,6 +20,7 @@ export const metadata: Metadata = {
   keywords: [
     "debt payoff calculator",
     "credit card debt payoff calculator",
+    "kakeikanri",
     "debt payoff planner",
     "debt payoff spreadsheet",
     "debt payoff",
