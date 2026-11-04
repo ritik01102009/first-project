@@ -130,7 +130,7 @@ export function DebtPayoffCalculator() {
       {/* Header with PDF & Print Export Actions */}
       <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4">
         <div className="flex items-center gap-3">
-          <div className="w-10 h-10 rounded-xl bg-gradient-to-br from-rose-500 to-orange-400 flex items-center justify-center shadow-md">
+          <div className="w-10 h-10 rounded-xl bg-gradient-to-br from-emerald-500 to-teal-400 flex items-center justify-center shadow-md">
             <Calculator className="w-5 h-5 text-white" />
           </div>
           <div>
@@ -174,12 +174,12 @@ export function DebtPayoffCalculator() {
           {
             label: t("debt.total_debt"),
             value: `${currencySymbol}${Math.round(totalBalance).toLocaleString()}`,
-            color: "text-rose-600 dark:text-rose-400",
+            color: "text-emerald-600 dark:text-emerald-400",
           },
           {
             label: t("debt.min_payments"),
             value: `${currencySymbol}${Math.round(totalMin).toLocaleString()}`,
-            color: "text-orange-600 dark:text-orange-400",
+            color: "text-emerald-500 dark:text-emerald-300",
           },
           {
             label: t("debt.payoff_time"),
@@ -189,7 +189,7 @@ export function DebtPayoffCalculator() {
           {
             label: t("debt.total_interest"),
             value: `${currencySymbol}${Math.round(result.totalInterest).toLocaleString()}`,
-            color: "text-violet-600 dark:text-violet-400",
+            color: "text-emerald-600 dark:text-emerald-400",
           },
         ].map((s) => (
           <div
@@ -296,7 +296,24 @@ export function DebtPayoffCalculator() {
       {/* Debts Table */}
       <div className="rounded-2xl bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 shadow-xs overflow-hidden">
         <div className="flex items-center justify-between px-5 py-4 border-b border-slate-100 dark:border-slate-800">
-          <h3 className="font-bold text-slate-800 dark:text-slate-100 text-sm">{t("debt.your_debts")}</h3>
+          <div className="flex flex-col gap-1">
+            <h3 className="font-bold text-slate-800 dark:text-slate-100 text-sm">{t("debt.your_debts")}</h3>
+            <div className="flex gap-2 mt-1">
+              {[
+                { name: language === "ja" ? "クレカ" : "Credit Card", balance: 5000, rate: 22.9, min: 100 },
+                { name: language === "ja" ? "ローン" : "Personal Loan", balance: 10000, rate: 12.5, min: 250 },
+                { name: language === "ja" ? "車" : "Car Loan", balance: 15000, rate: 6.5, min: 350 }
+              ].map(p => (
+                <button
+                  key={p.name}
+                  onClick={() => setDebts([...debts, { id: Date.now().toString(), name: p.name, balance: p.balance, interestRate: p.rate, minimumPayment: p.min }])}
+                  className="px-2 py-1 rounded-lg bg-slate-100 dark:bg-slate-800 text-[10px] font-bold text-slate-600 hover:bg-emerald-100 hover:text-emerald-700 transition-colors cursor-pointer"
+                >
+                  + {p.name}
+                </button>
+              ))}
+            </div>
+          </div>
           <button
             onClick={addDebt}
             className="flex items-center gap-1.5 px-3 py-1.5 rounded-xl bg-emerald-500 hover:bg-emerald-600 text-white text-xs font-bold transition-all shadow-xs cursor-pointer active:scale-95"

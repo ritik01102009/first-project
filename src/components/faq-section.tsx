@@ -19,7 +19,39 @@ export function FaqSection() {
     { q: t("faq.q8"), a: t("faq.a8") },
     { q: t("faq.q9"), a: t("faq.a9") },
     { q: t("faq.q10"), a: t("faq.a10") },
+    { q: t("faq.q11"), a: t("faq.a11") },
+    { q: t("faq.q12"), a: t("faq.a12") },
+    { q: t("faq.q13"), a: t("faq.a13") },
+    { q: t("faq.q14"), a: t("faq.a14") },
+    { q: t("faq.q15"), a: t("faq.a15") },
+    { q: t("faq.q16"), a: t("faq.a16") },
+    { q: t("faq.q17"), a: t("faq.a17") },
+    { q: t("faq.q18"), a: t("faq.a18") },
+    { q: t("faq.q19"), a: t("faq.a19") },
+    { q: t("faq.q20"), a: t("faq.a20") },
+    { q: t("faq.q21"), a: t("faq.a21") },
+    { q: t("faq.q22"), a: t("faq.a22") },
+    { q: t("faq.q23"), a: t("faq.a23") },
+    { q: t("faq.q24"), a: t("faq.a24") },
+    { q: t("faq.q25"), a: t("faq.a25") },
+    { q: t("faq.q26"), a: t("faq.a26") },
+    { q: t("faq.q27"), a: t("faq.a27") },
+    { q: t("faq.q28"), a: t("faq.a28") },
+    { q: t("faq.q29"), a: t("faq.a29") },
+    { q: t("faq.q30"), a: t("faq.a30") },
   ];
+
+  // Generate FAQPage schema
+  const faqSchema = {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    mainEntity: faqs.map((faq, index) => ({
+      "@type": "Question",
+      name: faq.q,
+      text: faq.a,
+      position: index + 1,
+    })),
+  };
 
   return (
     <section className="w-full max-w-4xl mx-auto py-12 px-4 mt-8">
@@ -57,3 +89,10 @@ export function FaqSection() {
     </section>
   );
 }
+
+// Export the schema for use by the page
+export const faqPageSchema = {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  mainEntity: [],
+};

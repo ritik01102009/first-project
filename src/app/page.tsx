@@ -1,6 +1,7 @@
 "use client";
 
 import React, { useState } from "react";
+import { usePageMetadata } from "@/hooks/use-metadata";
 import { Navbar } from "@/components/navbar";
 import { SlideWrapper } from "@/components/slide-wrapper";
 import { DashboardOverview } from "@/components/dashboard-overview";
@@ -10,14 +11,67 @@ import { BudgetTracker } from "@/components/budget-tracker";
 import { SavingsTracker } from "@/components/savings-tracker";
 import { EducationSection } from "@/components/education-section";
 import { BillSplitter } from "@/components/bill-splitter";
+import { SubscriptionCalculator } from "@/components/subscription-calculator";
 import { FaqSection } from "@/components/faq-section";
 import { useLanguage } from "@/components/providers/language-provider";
 import { Heart, Shield, FileText, Globe, BarChart3 } from "lucide-react";
 
-const TABS_ORDER = ["dashboard", "debt", "recommender", "budget", "savings", "bill-splitter", "education"];
+const TABS_ORDER = ["dashboard", "debt", "recommender", "budget", "savings", "subscriptions", "bill_splitter", "education"];
 
 export default function Home() {
   const { t, language, setLanguage } = useLanguage();
+  usePageMetadata({
+    title: t("hero.title_lead"),
+    description: t("hero.description"),
+    extraKeywords: ["budget app", "debt calculator", "financial freedom"],
+    openGraph: {
+      title: t("hero.title_lead"),
+      description: t("hero.description"),
+      type: "website",
+      images: [
+        {
+          url: "https://kakeikanri.com/og-image.png",
+          width: 1200,
+          height: 630,
+          alt: t("hero.title_highlight"),
+        },
+      ],
+    },
+    twitter: {
+      card: "summary_large_image",
+      title: t("hero.title_lead"),
+      description: t("hero.description"),
+      image: "https://kakeikanri.com/twitter-image.png",
+    },
+    schema: [
+      {
+        type: "WebPage",
+        data: {
+          "@context": "https://schema.org",
+          "@type": "WebPage",
+          name: t("hero.title_highlight"),
+          description: t("hero.description"),
+          url: "https://kakeikanri.com",
+          inLanguage: language,
+          isPartOf: {
+            "@type": "Website",
+            name: t("footer.brand_description"),
+          },
+        },
+      },
+      {
+        type: "Organization",
+        data: {
+          "@context": "https://schema.org",
+          "@type": "Organization",
+          name: language === "ja" ? "家計管理" : "KakeiKanri",
+          description: t("footer.brand_description"),
+          url: "https://kakeikanri.com",
+          logo: "https://kakeikanri.com/logo.png",
+        },
+      },
+    ],
+  });
   const [activeTab, setActiveTab] = useState<string>("dashboard");
   const [prevTab, setPrevTab] = useState<string>("dashboard");
 
@@ -32,40 +86,36 @@ export default function Home() {
   const slideDirection = currentIndex >= prevIndex ? "left" : "right";
 
   return (
-    <div className="min-h-screen flex flex-col bg-slate-50 dark:bg-slate-950 text-slate-900 dark:text-slate-100 transition-colors duration-300 relative overflow-x-hidden">
-      {/* Stripe-inspired atmospheric mesh gradient in the upper third */}
-      <div className="absolute top-0 left-0 right-0 h-96 stripe-mesh-gradient pointer-events-none opacity-60 dark:opacity-20 z-0" />
-
+    <div className="min-h-screen flex flex-col bg-slate-50 dark:bg-slate-950 text-slate-900 dark:text-slate-100 transition-colors duration-300">
       {/* Header / Navbar with Language Icon & Theme toggle */}
       <Navbar activeTab={activeTab} setActiveTab={handleTabChange} />
 
       {/* Main Content Body */}
-      <main className="flex-1 max-w-7xl w-full mx-auto px-3 sm:px-6 lg:px-8 py-5 sm:py-8 relative z-10">
+      <main className="flex-1 max-w-7xl w-full mx-auto px-4 lg:px-8 py-8">
         <SlideWrapper activeKey={activeTab} direction={slideDirection}>
           {activeTab === "dashboard" && <DashboardOverview onNavigate={handleTabChange} />}
           {activeTab === "debt" && <DebtPayoffCalculator />}
           {activeTab === "recommender" && <SmartDebtRecommender onNavigate={handleTabChange} />}
           {activeTab === "budget" && <BudgetTracker />}
           {activeTab === "savings" && <SavingsTracker />}
-          {activeTab === "bill-splitter" && <BillSplitter />}
+          {activeTab === "subscriptions" && <SubscriptionCalculator />}
+          {activeTab === "bill_splitter" && <BillSplitter />}
           {activeTab === "education" && <EducationSection />}
         </SlideWrapper>
       </main>
 
-      <div className="relative z-10">
-        <FaqSection />
-      </div>
+      <FaqSection />
 
       {/* Footer */}
-      <footer className="w-full border-t border-slate-200/80 dark:border-slate-800/80 bg-white/70 dark:bg-slate-900/70 backdrop-blur-sm py-10 px-4 lg:px-8 mt-12 transition-colors duration-300 relative z-10">
+      <footer className="w-full border-t border-slate-200/80 dark:border-slate-800/80 bg-white/70 dark:bg-slate-900/70 backdrop-blur-sm py-10 px-4 lg:px-8 mt-12 transition-colors duration-300">
         <div className="max-w-7xl mx-auto space-y-8">
           {/* Top row */}
           <div className="flex flex-col md:flex-row md:items-start justify-between gap-8">
             {/* Brand */}
             <div className="space-y-3 max-w-xs">
-              <div className="flex items-center gap-2.5">
-                <div className="w-8 h-8 rounded-xl overflow-hidden border border-slate-200 dark:border-slate-700 shadow-md bg-amber-50 shrink-0">
-                  <img src="/logo.jpg" alt="KakeiKanri Logo" className="w-full h-full object-cover" />
+              <div className="flex items-center gap-2">
+                <div className="w-8 h-8 rounded-xl bg-gradient-to-br from-emerald-500 to-lime-400 flex items-center justify-center text-slate-950 font-black text-xs shadow-md">
+                  KK
                 </div>
                 <span className="font-black text-slate-800 dark:text-slate-100 text-base">
                   {language === "ja" ? "家計管理" : "KakeiKanri"}
@@ -92,7 +142,7 @@ export default function Home() {
                   { label: t("nav.recommender"), tab: "recommender" },
                   { label: t("nav.budget"), tab: "budget" },
                   { label: t("nav.savings"), tab: "savings" },
-                  { label: t("nav.bill_splitter"), tab: "bill-splitter" },
+                  { label: t("nav.subscriptions"), tab: "subscriptions" },
                 ].map(({ label, tab }) => (
                   <button
                     key={tab}
@@ -152,7 +202,6 @@ export default function Home() {
                   { label: t("nav.dashboard"), tab: "dashboard" },
                   { label: t("nav.debt"), tab: "debt" },
                   { label: t("nav.recommender"), tab: "recommender" },
-                  { label: t("nav.bill_splitter"), tab: "bill-splitter" },
                   { label: t("nav.education"), tab: "education" },
                 ].map(({ label, tab }) => (
                   <button
