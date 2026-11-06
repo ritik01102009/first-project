@@ -18,7 +18,6 @@ const tabs = [
   { id: "budget", labelKey: "nav.budget" },
   { id: "savings", labelKey: "nav.savings" },
   { id: "subscriptions", labelKey: "nav.subscriptions" },
-  { id: "bill_splitter", labelKey: "nav.bill_splitter" },
   { id: "education", labelKey: "nav.education" },
 ];
 

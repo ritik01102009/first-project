@@ -10,13 +10,12 @@ import { SmartDebtRecommender } from "@/components/smart-debt-recommender";
 import { BudgetTracker } from "@/components/budget-tracker";
 import { SavingsTracker } from "@/components/savings-tracker";
 import { EducationSection } from "@/components/education-section";
-import { BillSplitter } from "@/components/bill-splitter";
 import { SubscriptionCalculator } from "@/components/subscription-calculator";
 import { FaqSection } from "@/components/faq-section";
 import { useLanguage } from "@/components/providers/language-provider";
 import { Heart, Shield, FileText, Globe, BarChart3 } from "lucide-react";
 
-const TABS_ORDER = ["dashboard", "debt", "recommender", "budget", "savings", "subscriptions", "bill_splitter", "education"];
+const TABS_ORDER = ["dashboard", "debt", "recommender", "budget", "savings", "subscriptions", "education"];
 
 export default function Home() {
   const { t, language, setLanguage } = useLanguage();
@@ -99,7 +98,6 @@ export default function Home() {
           {activeTab === "budget" && <BudgetTracker />}
           {activeTab === "savings" && <SavingsTracker />}
           {activeTab === "subscriptions" && <SubscriptionCalculator />}
-          {activeTab === "bill_splitter" && <BillSplitter />}
           {activeTab === "education" && <EducationSection />}
         </SlideWrapper>
       </main>
