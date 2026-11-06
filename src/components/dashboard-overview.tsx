@@ -58,15 +58,6 @@ export function DashboardOverview({ onNavigate }: DashboardOverviewProps) {
       border: "border-emerald-200 dark:border-emerald-800",
     },
     {
-      id: "bill_splitter",
-      icon: Receipt,
-      title: t("tools.bill_splitter.title"),
-      description: t("tools.bill_splitter.desc"),
-      color: "from-green-600 to-emerald-500",
-      bg: "bg-green-50 dark:bg-green-950/30",
-      border: "border-green-200 dark:border-green-800",
-    },
-    {
       id: "education",
       icon: BookOpen,
       title: t("tools.education.title"),
@@ -84,9 +75,9 @@ export function DashboardOverview({ onNavigate }: DashboardOverviewProps) {
   ];
 
   return (
-    <div className="space-y-10">
+    <div className="space-y-10 perspective-1000">
       {/* Hero */}
-      <div className="relative overflow-hidden rounded-3xl bg-gradient-to-br from-slate-900 via-emerald-950 to-slate-900 p-8 md:p-12 text-white shadow-xl">
+      <div className="relative overflow-hidden rounded-3xl bg-gradient-to-br from-slate-900 via-emerald-950 to-slate-900 p-8 md:p-12 text-white shadow-2xl transform transition-transform duration-500 hover:rotate-x-1 hover:rotate-y-1">
         <div
           className="absolute inset-0 opacity-20 pointer-events-none"
           style={{
@@ -117,7 +108,7 @@ export function DashboardOverview({ onNavigate }: DashboardOverviewProps) {
           <div className="flex flex-col sm:flex-row items-stretch sm:items-center gap-3.5">
             <button
               onClick={() => onNavigate("debt")}
-              className="w-full sm:w-auto px-6 py-3.5 rounded-xl bg-gradient-to-r from-emerald-500 to-lime-400 text-slate-950 font-extrabold text-sm hover:scale-[1.02] active:scale-95 transition-all shadow-lg shadow-emerald-500/30 cursor-pointer flex items-center justify-center gap-2"
+              className="w-full sm:w-auto px-6 py-3.5 rounded-xl bg-gradient-to-r from-emerald-500 to-lime-400 text-slate-950 font-extrabold text-sm hover:scale-105 active:scale-95 transition-all shadow-xl shadow-emerald-500/30 cursor-pointer flex items-center justify-center gap-2"
             >
               <span>{t("hero.start_debt")}</span>
               <ArrowRight className="w-4 h-4" />
@@ -137,7 +128,7 @@ export function DashboardOverview({ onNavigate }: DashboardOverviewProps) {
         {stats.map((s) => (
           <div
             key={s.label}
-            className="rounded-2xl bg-white dark:bg-slate-900 border border-slate-200/80 dark:border-slate-800 p-5 shadow-sm transition-all"
+            className="pro-card p-5"
           >
             <div className="text-2xl font-black tabular-nums tracking-tight text-slate-800 dark:text-slate-100">{s.value}</div>
             <div className="text-sm font-semibold text-slate-700 dark:text-slate-300 mt-1">{s.label}</div>
@@ -152,18 +143,18 @@ export function DashboardOverview({ onNavigate }: DashboardOverviewProps) {
           <h2 className="text-xl font-bold text-slate-800 dark:text-slate-100">{t("tools.section_title")}</h2>
           <p className="text-sm text-slate-500 dark:text-slate-400">{t("tools.section_desc")}</p>
         </div>
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
           {tools.map((tool) => {
             const Icon = tool.icon;
             return (
               <div
                 key={tool.id}
                 onClick={() => onNavigate(tool.id)}
-                className="group rounded-2xl bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 p-6 shadow-sm hover:shadow-md hover:border-emerald-300 dark:hover:border-emerald-700 transition-all cursor-pointer flex flex-col justify-between"
+                className="pro-card p-6 cursor-pointer flex flex-col justify-between group"
               >
                 <div>
                   <div
-                    className={`w-12 h-12 rounded-xl bg-gradient-to-br ${tool.color} flex items-center justify-center text-white shadow-md mb-4 group-hover:scale-105 transition-transform`}
+                    className={`w-12 h-12 rounded-xl bg-gradient-to-br ${tool.color} flex items-center justify-center text-white shadow-lg mb-4 group-hover:scale-110 transition-transform`}
                   >
                     <Icon className="w-6 h-6" />
                   </div>
