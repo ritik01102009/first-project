@@ -17,7 +17,6 @@ const tabs = [
   { id: "recommender", labelKey: "nav.recommender" },
   { id: "budget", labelKey: "nav.budget" },
   { id: "savings", labelKey: "nav.savings" },
-  { id: "subscriptions", labelKey: "nav.subscriptions" },
   { id: "education", labelKey: "nav.education" },
 ];
 
