@@ -1,0 +1,11 @@
+{
+ "page": null,
+ "url": "http://localhost:3000/",
+ "root": null,
+ "kind": "software",
+ "category": "Personal Finance and Debt Management App",
+ "primary": "Start Free",
+ "rounds": 3,
+ "start": "2026-11-07T17:21:39.776Z",
+ "by": "gate.mjs --start"
+}

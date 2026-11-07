@@ -1,5 +1,6 @@
 import type { Metadata, Viewport } from "next";
 import "./globals.css";
+import "./design-system.css";
 import { ThemeProvider } from "@/components/providers/theme-provider";
 import { LanguageProvider } from "@/components/providers/language-provider";
 
@@ -8,13 +9,13 @@ export const viewport: Viewport = {
   initialScale: 1,
   maximumScale: 5,
   themeColor: [
-    { media: "(prefers-color-scheme: light)", color: "#f0f8f6" },
-    { media: "(prefers-color-scheme: dark)", color: "#001715" },
+    { media: "(prefers-color-scheme: light)", color: "#eef0f3" },
+    { media: "(prefers-color-scheme: dark)", color: "#0b0c0e" },
   ],
 };
 
 export const metadata: Metadata = {
-  title: "KakeiKanri (家計管理) - Free Debt Payoff Calculator & Budget Tracker App",
+  title: "KakeiKanri (家計管理) - Personal Finance and Debt Management App",
   description:
     "KakeiKanri (家計管理) is the best budget app and credit card debt payoff calculator. Compare Debt Snowball vs Avalanche, track budget, and export professional PDF reports.",
   keywords: [
@@ -66,8 +67,10 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <html suppressHydrationWarning>
+    <html lang="en" data-type="software" data-radius="sharp" suppressHydrationWarning>
       <head>
+        <meta name="page-type" content="software" />
+        <meta name="site-kind" content="software" />
         <link rel="icon" href="/logo.jpg" type="image/jpeg" />
         <link rel="apple-touch-icon" href="/logo.jpg" />
         <meta name="google-site-verification" content="NJ9lfG5gSJGsY5qRXOAqsAjPYt10NihnwnHlnFJaYN0" />
@@ -76,7 +79,7 @@ export default function RootLayout({
         <meta name="referrer" content="strict-origin-when-cross-origin" />
         <link rel="preconnect" href="https://fonts.googleapis.com" />
         <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
-        <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet" />
+        <link href="https://fonts.googleapis.com/css2?family=Geist:wght@400..700&family=Geist+Mono:wght@400..500&display=swap" rel="stylesheet" />
       </head>
       <body>
         <ThemeProvider>
