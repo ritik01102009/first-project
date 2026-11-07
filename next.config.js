@@ -1,6 +1,6 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
-  // Static export — required for Cloudflare Pages (no Node.js server)
+  // Static export — configured for Netlify static deployment
   output: "export",
   trailingSlash: true,
 
