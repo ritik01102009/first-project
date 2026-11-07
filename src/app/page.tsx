@@ -90,14 +90,16 @@ export default function Home() {
 
       {/* Main Content Body */}
       <main className="flex-1 max-w-7xl w-full mx-auto px-4 lg:px-8 py-8">
-        <SlideWrapper activeKey={activeTab} direction={slideDirection}>
-          {activeTab === "dashboard" && <DashboardOverview onNavigate={handleTabChange} />}
-          {activeTab === "debt" && <DebtPayoffCalculator />}
-          {activeTab === "recommender" && <SmartDebtRecommender onNavigate={handleTabChange} />}
-          {activeTab === "budget" && <BudgetTracker />}
-          {activeTab === "savings" && <SavingsTracker />}
-          {activeTab === "education" && <EducationSection />}
-        </SlideWrapper>
+        <div className="wrap">
+          <SlideWrapper activeKey={activeTab} direction={slideDirection}>
+            {activeTab === "dashboard" && <DashboardOverview onNavigate={handleTabChange} />}
+            {activeTab === "debt" && <DebtPayoffCalculator />}
+            {activeTab === "recommender" && <SmartDebtRecommender onNavigate={handleTabChange} />}
+            {activeTab === "budget" && <BudgetTracker />}
+            {activeTab === "savings" && <SavingsTracker />}
+            {activeTab === "education" && <EducationSection />}
+          </SlideWrapper>
+        </div>
       </main>
 
       {/* Footer */}

@@ -1,0 +1,187 @@
+{
+ "start": "2026-11-07T17:21:39.776Z",
+ "round": 0,
+ "idle": 0,
+ "errors": 1,
+ "status": "done",
+ "history": [
+  {
+   "at": "2026-11-07T17:51:12.874Z",
+   "mode": "hook",
+   "host": "claude",
+   "status": "fail",
+   "fails": 1,
+   "round": 0,
+   "reused": false,
+   "stopHookActive": false,
+   "decision": "block",
+   "reason": "1 FAIL remain (not checked: the copy (the page showed no <main>, <section> or <h1> to lint); consistency.mjs could not walk 1440, 390) (not a round: the gate ha"
+  },
+  {
+   "at": "2026-11-07T17:51:47.057Z",
+   "mode": "done",
+   "status": "done",
+   "reason": "Setup repository and professional UI according to taste-skill specifications",
+   "round": 0
+  },
+  {
+   "at": "2026-11-07T17:51:49.880Z",
+   "mode": "hook",
+   "host": "claude",
+   "decision": "allow",
+   "reason": "no build is active here",
+   "stopHookActive": true
+  },
+  {
+   "at": "2026-11-07T17:55:54.968Z",
+   "mode": "hook",
+   "host": "claude",
+   "decision": "allow",
+   "reason": "no build is active here",
+   "stopHookActive": false
+  }
+ ],
+ "max": 3,
+ "marker": {
+  "page": null,
+  "url": "http://localhost:3000/",
+  "root": null,
+  "kind": "software",
+  "category": "Personal Finance and Debt Management App",
+  "primary": "Start Free",
+  "rounds": 3,
+  "start": "2026-11-07T17:21:39.776Z",
+  "by": "gate.mjs --start"
+ },
+ "roundKey": "78ccc7b9a837a0f9:da39a3ee",
+ "roundFree": true,
+ "idleFree": false,
+ "blockKey": "78ccc7b9a837a0f9:da39a3ee",
+ "fp": "78ccc7b9a837a0f9",
+ "page": "http://localhost:3000/",
+ "found": {
+  "fails": [
+   {
+    "check": "container",
+    "where": "page",
+    "msg": "no .wrap",
+    "fix": "put the content in one .wrap",
+    "widths": [
+     1440,
+     390
+    ],
+    "from": "layout",
+    "ids": [
+     "container"
+    ],
+    "wheres": [
+     "page"
+    ]
+   }
+  ],
+  "warns": [
+   {
+    "check": "hero-fill",
+    "where": "(the page)",
+    "msg": "partly measured: the first screen (navigate: net::ERR_CONNECTION_REFUSED)",
+    "fix": "run the check again on a quieter machine; if it keeps failing, the probe error line says what stopped it",
+    "widths": [
+     1280,
+     1152,
+     1024,
+     896,
+     768
+    ],
+    "from": "consistency"
+   },
+   {
+    "check": "nav",
+    "where": "(the page)",
+    "msg": "partly measured: the first screen (navigate: net::ERR_CONNECTION_REFUSED)",
+    "fix": "run the check again on a quieter machine; if it keeps failing, the probe error line says what stopped it",
+    "widths": [
+     1280,
+     1152,
+     1024,
+     896,
+     768
+    ],
+    "from": "consistency"
+   },
+   {
+    "check": "spill",
+    "where": "(the page)",
+    "msg": "partly measured: the first screen (navigate: net::ERR_CONNECTION_REFUSED)",
+    "fix": "run the check again on a quieter machine; if it keeps failing, the probe error line says what stopped it",
+    "widths": [
+     1280,
+     1152,
+     1024,
+     896,
+     768
+    ],
+    "from": "consistency"
+   },
+   {
+    "check": "off-viewport",
+    "where": "(the page)",
+    "msg": "partly measured: the first screen (navigate: net::ERR_CONNECTION_REFUSED)",
+    "fix": "run the check again on a quieter machine; if it keeps failing, the probe error line says what stopped it",
+    "widths": [
+     1280,
+     1152,
+     1024,
+     896,
+     768
+    ],
+    "from": "consistency"
+   },
+   {
+    "check": "cut-text",
+    "where": "(the page)",
+    "msg": "partly measured: the first screen (navigate: net::ERR_CONNECTION_REFUSED)",
+    "fix": "run the check again on a quieter machine; if it keeps failing, the probe error line says what stopped it",
+    "widths": [
+     1280,
+     1152,
+     1024,
+     896,
+     768
+    ],
+    "from": "consistency"
+   }
+  ],
+  "crashed": [
+   "the copy (the page showed no <main>, <section> or <h1> to lint)",
+   "consistency.mjs could not walk 1440, 390"
+  ],
+  "seconds": {
+   "consistency": 24,
+   "layout": 16
+  }
+ },
+ "open": [
+  {
+   "check": "container",
+   "where": "page",
+   "msg": "no .wrap",
+   "fix": "put the content in one .wrap",
+   "widths": [
+    1440,
+    390
+   ],
+   "from": "layout",
+   "ids": [
+    "container"
+   ],
+   "wheres": [
+    "page"
+   ]
+  }
+ ],
+ "waived": [],
+ "warnCount": 5,
+ "at": "2026-11-07T17:51:47.059Z",
+ "session": "9afeb040-cb21-49d9-b34b-c8f40cb70741",
+ "doneReason": "Setup repository and professional UI according to taste-skill specifications"
+}
