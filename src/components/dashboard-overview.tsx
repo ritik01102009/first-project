@@ -49,15 +49,6 @@ export function DashboardOverview({ onNavigate }: DashboardOverviewProps) {
       border: "border-lime-200 dark:border-lime-800",
     },
     {
-      id: "subscriptions",
-      icon: Target,
-      title: t("tools.subscriptions.title"),
-      description: t("tools.subscriptions.desc"),
-      color: "from-emerald-600 to-teal-500",
-      bg: "bg-emerald-50 dark:bg-emerald-950/30",
-      border: "border-emerald-200 dark:border-emerald-800",
-    },
-    {
       id: "education",
       icon: BookOpen,
       title: t("tools.education.title"),

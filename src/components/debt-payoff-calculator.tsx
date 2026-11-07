@@ -139,32 +139,8 @@ export function DebtPayoffCalculator() {
           </div>
         </div>
 
-        {/* Export & Reset Actions */}
+        {/* Export & Reset Actions Removed for Simplicity */}
         <div className="flex items-center gap-2">
-          <button
-            onClick={handleReset}
-            className="flex items-center gap-1.5 px-3 py-1.5 rounded-xl border border-slate-200 dark:border-slate-800 bg-white dark:bg-slate-900 hover:bg-slate-50 dark:hover:bg-slate-800 text-slate-600 dark:text-slate-400 text-xs font-semibold transition-all shadow-xs cursor-pointer"
-            title={language === "ja" ? "初期状態に戻す" : "Reset data"}
-          >
-            <RotateCcw className="w-3.5 h-3.5" />
-            <span className="hidden sm:inline">{language === "ja" ? "リセット" : "Reset"}</span>
-          </button>
-          <button
-            onClick={() => setShowPdfModal(true)}
-            className="flex items-center gap-1.5 px-3 py-1.5 rounded-xl border border-slate-200 dark:border-slate-700 bg-white dark:bg-slate-800 hover:bg-slate-50 dark:hover:bg-slate-700 text-slate-700 dark:text-slate-200 text-xs font-bold transition-all shadow-xs cursor-pointer"
-            title={language === "ja" ? "PDFプレビュー・保存" : "Preview & Export PDF"}
-          >
-            <FileText className="w-3.5 h-3.5 text-rose-500" />
-            <span>{language === "ja" ? "PDF出力" : "Export PDF"}</span>
-          </button>
-          <button
-            onClick={() => setShowPdfModal(true)}
-            className="flex items-center gap-1.5 px-3 py-1.5 rounded-xl border border-slate-200 dark:border-slate-700 bg-white dark:bg-slate-800 hover:bg-slate-50 dark:hover:bg-slate-700 text-slate-700 dark:text-slate-200 text-xs font-bold transition-all shadow-xs cursor-pointer"
-            title={language === "ja" ? "レポート印刷" : "Print Report"}
-          >
-            <Printer className="w-3.5 h-3.5 text-emerald-500" />
-            <span>{language === "ja" ? "印刷" : "Print"}</span>
-          </button>
         </div>
       </div>
 

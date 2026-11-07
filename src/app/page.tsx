@@ -10,12 +10,11 @@ import { SmartDebtRecommender } from "@/components/smart-debt-recommender";
 import { BudgetTracker } from "@/components/budget-tracker";
 import { SavingsTracker } from "@/components/savings-tracker";
 import { EducationSection } from "@/components/education-section";
-import { SubscriptionCalculator } from "@/components/subscription-calculator";
 import { FaqSection } from "@/components/faq-section";
 import { useLanguage } from "@/components/providers/language-provider";
 import { Heart, Shield, FileText, Globe, BarChart3 } from "lucide-react";
 
-const TABS_ORDER = ["dashboard", "debt", "recommender", "budget", "savings", "subscriptions", "education"];
+const TABS_ORDER = ["dashboard", "debt", "recommender", "budget", "savings", "education"];
 
 export default function Home() {
   const { t, language, setLanguage } = useLanguage();
@@ -97,12 +96,9 @@ export default function Home() {
           {activeTab === "recommender" && <SmartDebtRecommender onNavigate={handleTabChange} />}
           {activeTab === "budget" && <BudgetTracker />}
           {activeTab === "savings" && <SavingsTracker />}
-          {activeTab === "subscriptions" && <SubscriptionCalculator />}
           {activeTab === "education" && <EducationSection />}
         </SlideWrapper>
       </main>
-
-      <FaqSection />
 
       {/* Footer */}
       <footer className="w-full border-t border-slate-200/80 dark:border-slate-800/80 bg-white/70 dark:bg-slate-900/70 backdrop-blur-sm py-10 px-4 lg:px-8 mt-12 transition-colors duration-300">
