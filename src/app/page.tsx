@@ -100,6 +100,8 @@ export default function Home() {
             {activeTab === "education" && <EducationSection />}
           </SlideWrapper>
         </div>
+        {/* FAQ Section */}
+        <FaqSection />
       </main>
 
       {/* Footer */}
