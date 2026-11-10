@@ -5,6 +5,7 @@
 [build.environment]
   NODE_VERSION = "20"
   GIT_SUBMODULES = "false"
+  NODE_OPTIONS = "--max-old-space-size=4096"
 
 [[headers]]
   for = "/*"
