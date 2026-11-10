@@ -201,7 +201,7 @@ export async function POST(req: NextRequest) {
         ocrFormData.append("recognizer", "auto");
         ocrFormData.append("ref_no", `sba_${Date.now()}`);
         
-        const blob = new Blob([fileBuffer], { type: "image/jpeg" });
+        const blob = new Blob([new Uint8Array(fileBuffer)], { type: "image/jpeg" });
         ocrFormData.append("file", blob, fileName);
 
         const controller = new AbortController();

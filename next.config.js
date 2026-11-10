@@ -1,21 +1,11 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
-  // Static export — configured for Netlify static deployment
-  output: "export",
-  trailingSlash: true,
-
-  reactStrictMode: true,
-  typescript: {
-    ignoreBuildErrors: true,
+  // Disable Turbopack (experimental) and force the stable Webpack compiler
+  // This avoids Windows file‑lock / subprocess issues when processing CSS.
+  experimental: {
+    turbopack: false,
   },
-  images: {
-    // Static export doesn't support Next.js image optimisation server
-    unoptimized: true,
-  },
-  turbopack: {
-    root: __dirname,
-  },
+  // Optional: silence the React‑version warning (React 19 will be used later)
+  // reactStrictMode: true,
 };
-
 module.exports = nextConfig;
-

@@ -11,6 +11,7 @@ import { BudgetTracker } from "@/components/budget-tracker";
 import { SavingsTracker } from "@/components/savings-tracker";
 import { EducationSection } from "@/components/education-section";
 import { FaqSection } from "@/components/faq-section";
+import { SakuraOverlay } from "@/components/sakura-overlay";
 import { useLanguage } from "@/components/providers/language-provider";
 import { Heart, Shield, FileText, Globe, BarChart3 } from "lucide-react";
 
@@ -85,6 +86,9 @@ export default function Home() {
 
   return (
     <div className="min-h-screen flex flex-col bg-slate-50 dark:bg-slate-950 text-slate-900 dark:text-slate-100 transition-colors duration-300">
+      {/* Ambient Drifting Sakura Blossom Animation */}
+      <SakuraOverlay />
+
       {/* Header / Navbar with Language Icon & Theme toggle */}
       <Navbar activeTab={activeTab} setActiveTab={handleTabChange} />
 

@@ -26,7 +26,7 @@ export type OpenGraphType = {
 };
 
 export type TwitterType = {
-  card: "summary" | "summary_large_image" | "app" | "product";
+  card: "summary" | "summary_large_image" | "app";
   title?: string;
   description?: string;
   image?: string;
