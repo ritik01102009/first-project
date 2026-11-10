@@ -1,5 +1,5 @@
 # dependencies
-/node_modules
+node_modules/
 /.pnp
 .pnp.js
 
@@ -7,11 +7,12 @@
 /coverage
 
 # next.js
-/.next/
-/out/
+.next/
+out/
 
 # production
-/build
+build/
+dist/
 
 # misc
 .DS_Store
@@ -66,3 +67,6 @@ Spensensie/
 /browser-use/
 /external/
 /temp_splitio/
+/mozilla-ottari-gateway/
+/system-prompts-leaks/
+/web-to-design-md/

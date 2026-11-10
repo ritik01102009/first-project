@@ -1,0 +1,46 @@
+{
+  "conversations": [
+    {
+      "id": "3da926e0-48a6-41e8-94df-a962b201cefc",
+      "title": "New Conversation",
+      "model": "openai:gpt-4o-mini",
+      "createdAt": 1794241324726,
+      "updatedAt": 1794241324726
+    },
+    {
+      "id": "3aceca5a-01e0-40b7-9959-73c3a4cef474",
+      "title": "New Conversation",
+      "model": "openai:gpt-4o-mini",
+      "createdAt": 1794241326453,
+      "updatedAt": 1794241326453
+    },
+    {
+      "id": "6c68784f-5039-4ce8-b616-e88ab421309b",
+      "title": "New Conversation",
+      "model": "openai:gpt-4o-mini",
+      "createdAt": 1794241329204,
+      "updatedAt": 1794241329204
+    },
+    {
+      "id": "2d9e0b48-db9f-4a8f-a037-50383cb180bf",
+      "title": "New Conversation",
+      "model": "openai:gpt-4o-mini",
+      "createdAt": 1794241964319,
+      "updatedAt": 1794241964319
+    },
+    {
+      "id": "d8722136-e3fc-4434-bbf8-8fc8348c8e71",
+      "title": "New Conversation",
+      "model": "local:fallback",
+      "createdAt": 1794242272899,
+      "updatedAt": 1794242272899
+    }
+  ],
+  "messages": {
+    "3da926e0-48a6-41e8-94df-a962b201cefc": [],
+    "3aceca5a-01e0-40b7-9959-73c3a4cef474": [],
+    "6c68784f-5039-4ce8-b616-e88ab421309b": [],
+    "2d9e0b48-db9f-4a8f-a037-50383cb180bf": [],
+    "d8722136-e3fc-4434-bbf8-8fc8348c8e71": []
+  }
+}
