@@ -6,6 +6,7 @@ import {
   Trash2,
   FileText,
   Printer,
+  Receipt,
   RotateCcw,
   Search,
   CheckCircle2,

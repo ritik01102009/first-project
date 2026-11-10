@@ -15,7 +15,8 @@ import {
   Layers,
   FileText,
   Clock,
-  Compass
+  Compass,
+  DollarSign
 } from "lucide-react";
 import { useLanguage } from "@/components/providers/language-provider";
 
