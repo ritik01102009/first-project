@@ -1,6 +1,7 @@
 "use client";
 
 import React, { useState } from "react";
+import Image from "next/image";
 import { usePageMetadata } from "@/hooks/use-metadata";
 import { Navbar } from "@/components/navbar";
 import { SlideWrapper } from "@/components/slide-wrapper";
@@ -66,7 +67,7 @@ export default function Home() {
           name: language === "ja" ? "家計管理" : "KakeiKanri",
           description: t("footer.brand_description"),
           url: "https://kakeikanri.com",
-          logo: "https://kakeikanri.com/logo.png",
+          logo: "https://kakeikanri.com/logo.jpg",
         },
       },
     ],
@@ -116,8 +117,14 @@ export default function Home() {
             {/* Brand */}
             <div className="space-y-3 max-w-xs">
               <div className="flex items-center gap-2">
-                <div className="w-8 h-8 rounded-xl bg-gradient-to-br from-emerald-500 to-lime-400 flex items-center justify-center text-slate-950 font-black text-xs shadow-md">
-                  KK
+                <div className="w-8 h-8 rounded-xl overflow-hidden flex items-center justify-center shadow-sm border border-slate-200/80 dark:border-slate-700/80 bg-white dark:bg-slate-800">
+                  <Image
+                    src="/logo.jpg"
+                    alt="KakeiKanri Logo"
+                    width={32}
+                    height={32}
+                    className="w-full h-full object-cover"
+                  />
                 </div>
                 <span className="font-black text-slate-800 dark:text-slate-100 text-base">
                   {language === "ja" ? "家計管理" : "KakeiKanri"}

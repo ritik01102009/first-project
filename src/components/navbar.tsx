@@ -1,10 +1,11 @@
 "use client";
 
 import React, { useState } from "react";
+import Image from "next/image";
 import { useTheme } from "@/components/providers/theme-provider";
 import { useLanguage } from "@/components/providers/language-provider";
 
-import { Sun, Moon, Menu, X, TrendingUp, Globe } from "lucide-react";
+import { Sun, Moon, Menu, X, Globe } from "lucide-react";
 
 interface NavbarProps {
   activeTab: string;
@@ -36,8 +37,15 @@ export function Navbar({ activeTab, setActiveTab }: NavbarProps) {
           className="flex items-center gap-2.5 group cursor-pointer"
           aria-label="KakeiKanri Home"
         >
-          <div className="w-9 h-9 rounded-xl bg-gradient-to-br from-emerald-500 to-lime-400 flex items-center justify-center shadow-md shadow-emerald-500/20 group-hover:scale-105 transition-transform">
-            <TrendingUp className="w-5 h-5 text-slate-950 stroke-[2.5]" />
+          <div className="w-9 h-9 rounded-xl overflow-hidden flex items-center justify-center shadow-md shadow-emerald-500/20 group-hover:scale-105 transition-transform bg-white dark:bg-slate-800 border border-slate-200/80 dark:border-slate-700/80">
+            <Image
+              src="/logo.jpg"
+              alt="KakeiKanri Logo"
+              width={36}
+              height={36}
+              className="w-full h-full object-cover"
+              priority
+            />
           </div>
           <div className="flex flex-col text-left">
             <span className="font-black text-slate-800 dark:text-slate-100 text-lg leading-tight tracking-tight">

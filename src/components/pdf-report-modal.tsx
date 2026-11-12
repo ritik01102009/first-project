@@ -111,8 +111,8 @@ export function PdfReportModal({
           <div className="flex items-start justify-between border-b-2 border-emerald-500/30 pb-6">
             <div className="space-y-1">
               <div className="flex items-center gap-2.5">
-                <div className="w-8 h-8 rounded-xl bg-emerald-500 text-slate-950 flex items-center justify-center font-black text-sm">
-                  <TrendingUp className="w-5 h-5 stroke-[3]" />
+                <div className="w-8 h-8 rounded-xl overflow-hidden flex items-center justify-center border border-slate-200 bg-white shadow-xs">
+                  <img src="/logo.jpg" alt="Logo" className="w-full h-full object-cover" />
                 </div>
                 <span className="font-black text-xl text-slate-900 tracking-tight">家計管理</span>
               </div>
