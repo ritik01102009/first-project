@@ -46,6 +46,7 @@ next-env.d.ts
 Spensensie/
 .vscode-shared.code-workspace
 .npmrc
+.venv/
 
 
 # external cloned repos & agent scratch
@@ -70,3 +71,4 @@ Spensensie/
 /mozilla-ottari-gateway/
 /system-prompts-leaks/
 /web-to-design-md/
+/video-editing-skill/

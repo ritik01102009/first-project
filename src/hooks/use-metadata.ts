@@ -117,13 +117,13 @@ export function usePageMetadata(
             card: options.twitter.card,
             title: options.twitter.title,
             description: options.twitter.description,
-            image: options.twitter.image,
+            images: options.twitter.image ? [options.twitter.image] : undefined,
           }
         : {
             card: "summary",
             title: t("footer.brand_description"),
             description: t("footer.brand_description"),
-            image: "/og-image.png",
+            images: ["/og-image.png"],
           },
     };
 
