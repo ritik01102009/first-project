@@ -65,7 +65,7 @@ export function Navbar({ activeTab, setActiveTab }: NavbarProps) {
               onClick={() => setActiveTab(tab.id)}
               className={`px-3 py-1.5 rounded-lg text-xs font-semibold transition-all duration-200 cursor-pointer ${
                 activeTab === tab.id
-                  ? "bg-emerald-500/15 text-emerald-600 dark:text-emerald-400 shadow-xs"
+                  ? "bg-red-500/15 text-red-600 dark:text-red-400 shadow-xs"
                   : "text-slate-600 dark:text-slate-400 hover:text-slate-900 dark:hover:text-slate-100 hover:bg-slate-100 dark:hover:bg-slate-800"
               }`}
             >
