@@ -1,4 +1,5 @@
 import type { Metadata, Viewport } from "next";
+import Script from "next/script";
 import "./globals.css";
 import "./design-system.css";
 import { ThemeProvider } from "@/components/providers/theme-provider";
@@ -69,6 +70,12 @@ export default function RootLayout({
   return (
     <html lang="en" data-type="software" data-radius="sharp" suppressHydrationWarning>
       <head>
+        <script async src="https://googletagmanager.com"></script>
+        <script>
+          window.dataLayer = window.dataLayer || [];
+          function gtag(){dataLayer.push(arguments);}
+          gtag('js', new Date());
+        </script>
         <meta name="page-type" content="software" />
         <meta name="site-kind" content="software" />
         <link rel="icon" href="/logo.jpg" type="image/jpeg" />
